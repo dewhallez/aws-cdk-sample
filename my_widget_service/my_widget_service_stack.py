@@ -4,6 +4,7 @@ from aws_cdk import (
     # aws_sqs as sqs,
 )
 from constructs import Construct
+from . import widget_service
 
 class MyWidgetServiceStack(Stack):
 
@@ -17,3 +18,4 @@ class MyWidgetServiceStack(Stack):
         #     self, "MyWidgetServiceQueue",
         #     visibility_timeout=Duration.seconds(300),
         # )
+        widget_service.WidgetService(self, "Widgets")
